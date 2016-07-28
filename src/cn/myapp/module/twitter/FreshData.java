@@ -4,6 +4,11 @@ import cn.myapp.model.DaoObject;
 
 public class FreshData extends DaoObject {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	private long	id ;
 	private String	crawler_time ;
 	private String	crawler_time_stamp ;

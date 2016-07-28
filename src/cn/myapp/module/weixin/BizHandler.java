@@ -60,10 +60,10 @@ public class BizHandler {
 		@SuppressWarnings("unchecked")
 		List<Map<String, String>> bizs = (List<Map<String, String>>) bizMap.get("bizs") ;
 		String jsonFromArr = objectMapper.writeValueAsString(bizs) ;
-		JavaType javaType = objectMapper.getTypeFactory().constructParametricType(List.class, Biz.class);  
-		List<Biz> list = objectMapper.readValue(jsonFromArr, javaType) ;		
+		JavaType javaType = objectMapper.getTypeFactory().constructParametricType(List.class, Biz.class) ;
+		List<Biz> list = objectMapper.readValue(jsonFromArr, javaType) ;
 		for (Biz biz : list) {
-			if (biz.getId() < maxID_fromDB) continue ;							
+			if (biz.getId() < maxID_fromDB) continue ;
 			biz.daoInsert("wx_biz", "id") ;
 		}
 	}
